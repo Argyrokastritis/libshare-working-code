@@ -25,19 +25,31 @@ public class LoginActivity extends AppCompatActivity {
                 String user = username.getText().toString();
                 String pass = password.getText().toString();
 
-                if(user.equals("")||pass.equals(""))
+                if (user.equals("") || pass.equals(""))
                     Toast.makeText(LoginActivity.this, "Please enter all the fields", Toast.LENGTH_SHORT).show();
-                else{
-                    Boolean checkuserpass = DB.checkusernamepassword(user, pass);
-                    if(checkuserpass==true){
-                        Toast.makeText(LoginActivity.this, "Sign in successfull", Toast.LENGTH_SHORT).show();
-                        Intent intent  = new Intent(getApplicationContext(), HomeActivity.class);
-                        startActivity(intent);
-                    }else{
+
+                else {
+                    Boolean checkUserPass = DB.checkUsernamePassword(user, pass);
+                    if (checkUserPass==true) {
+                        if (user.equals("admin") && pass.equals("admin")){
+                            Toast.makeText(LoginActivity.this, "Sign in successful", Toast.LENGTH_SHORT).show();
+                            Intent intent1 = new Intent(getApplicationContext(), MenuAdmin.class);
+                            intent1.putExtra("username", user);
+                            startActivity(intent1);
+                        }
+                        else{
+                        Toast.makeText(LoginActivity.this, "Sign in successful", Toast.LENGTH_SHORT).show();
+                        Intent intent2 = new Intent(getApplicationContext(), HomeActivity.class);
+                        intent2.putExtra("username", user);
+                        startActivity(intent2);
+                        }
+                    }
+                    else {
                         Toast.makeText(LoginActivity.this, "Invalid Credentials", Toast.LENGTH_SHORT).show();
                     }
-                }
             }
+            }
+
         });
     }
 }

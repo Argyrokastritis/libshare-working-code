@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"><![CDATA[
+    android:orientation="vertical">
+    <![CDATA[
     //tools:context=".HomeActivity">
 
 
@@ -23,12 +24,12 @@
 
     <TextView
         android:id="@+id/topmessage"
-        android:layout_width="336dp"
-        android:layout_height="49dp"
-        android:layout_marginLeft="55dp"
-        android:layout_marginTop="80dp"
+        android:layout_width="315dp"
+        android:layout_height="37dp"
+        android:layout_marginLeft="60dp"
+        android:layout_marginTop="30dp"
         android:layout_marginBottom="681dp"
-        android:text="Welcome back !!"
+        android:text=""
         android:textColor="@color/black"
         android:textSize="25dp"
         android:textStyle="bold"
